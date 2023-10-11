@@ -7,7 +7,19 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+body.dark {
   background-color: #111423;
+  color: rgba(255, 255, 255, 0.8039215686);
+}
+body.dark .topbar p, body.dark .topbar p ul {
+  background-color: #131725;
 }
 
 .topbar {
@@ -17,7 +29,7 @@
   padding: 10px;
   margin-inline: 5%;
   font-size: 14px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.6117647059);
 }
 .topbar h2 {
   font-weight: 400;
@@ -25,18 +37,19 @@
 .topbar h2 span {
   font-size: 14px;
   padding: 3px 8px;
-  color: #fff;
+  color: #ffffff;
   border-radius: 7px;
   background-color: rgb(249, 150, 88);
 }
 .topbar .buttons {
   display: flex;
   position: relative;
+  gap: 5px;
 }
 .topbar .buttons p {
   padding: 15px 20px;
   border-radius: 2px;
-  background-color: #fff;
+  background-color: #ffffff;
   border: 1px solid rgba(204, 204, 204, 0.4);
   cursor: pointer;
   position: relative;
@@ -45,7 +58,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  box-shadow: 2px 4px 10px rgba(153, 153, 153, 0.3098039216);
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1607843137);
   background-color: #fff;
   color: #999999;
   border-radius: 5px;
