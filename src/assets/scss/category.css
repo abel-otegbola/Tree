@@ -13,7 +13,7 @@
   background-color: rgba(158, 158, 158, 0.5294117647);
   position: absolute;
   top: 98%;
-  left: 25%;
+  left: 30%;
   height: 33px;
 }
 .category ::after {
@@ -21,8 +21,8 @@
   width: 1px;
   background-color: rgba(158, 158, 158, 0.5294117647);
   position: absolute;
-  top: -48%;
-  left: 25%;
+  top: -52%;
+  left: 30%;
   height: 33px;
 }
 .category p, .category input {
@@ -62,14 +62,14 @@
   padding-block: 15px;
   position: relative;
 }
-.child .background {
+.child .line {
   content: "";
   position: absolute;
-  width: 76%;
+  width: calc(100% - 242px);
   height: 70px;
-  border-radius: 5px;
-  top: 0;
-  left: 6%;
+  border-top: 1px solid rgba(158, 158, 158, 0.5294117647);
+  top: 1px;
+  left: 12%;
 }
 
 .root ::before {
@@ -80,7 +80,7 @@
 }
 
 .no-child ::before {
-  top: -50%;
+  top: -52%;
 }
 .no-child ::after {
   display: none;

@@ -51,7 +51,8 @@ export default function TreeComponentRenderer({ tree , onNodeClick, onNodeNameCh
             </div>
             {tree.children.length > 0 && (
                 <div className="child">
-                    <div className="background"></div>
+                    <div className="line first"></div>
+                    <div className="line second"></div>
                     {tree.children.map((child: any) => (
                         <TreeComponentRenderer  key={child.id} tree={child} onNodeClick={onNodeClick} onNodeNameChange={onNodeNameChange} onNodeDelete={onNodeDelete}/>
                     ))}

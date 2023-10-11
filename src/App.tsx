@@ -9,9 +9,11 @@ function App() {
   return (
     <div>
       <Topbar zoom={zoom} setZoom={setZoom} />
-      <div className='canvas' style={{ zoom: zoom + "%" }}>
-        <Tree/>
-      </div>
+      <main>
+        <div className='canvas' style={{ zoom: zoom + "%" }}>
+          <Tree/>
+        </div>
+      </main>
     </div>
   )
 }

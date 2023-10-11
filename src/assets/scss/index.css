@@ -12,6 +12,7 @@
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
   min-height: 100vh;
 }
 body.dark {
@@ -86,6 +87,11 @@ body.dark .topbar p, body.dark .topbar p ul {
   color: #6a8ac7;
 }
 
+.main {
+  overflow: scroll;
+  width: 100%;
+}
+
 .canvas {
   display: flex;
   justify-content: center;
@@ -107,13 +113,13 @@ body.dark .topbar p, body.dark .topbar p ul {
   width: 500px;
 }
 .tree.three {
-  width: 1000px;
+  width: 900px;
 }
 .tree.four {
-  width: 1200px;
+  width: 1500px;
 }
 .tree.five {
-  width: 1600px;
+  width: 2000px;
 }
 .tree .child {
   display: flex;
