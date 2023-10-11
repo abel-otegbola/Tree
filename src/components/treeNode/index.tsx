@@ -3,11 +3,7 @@ import "../../assets/scss/category.css"
 import { useState } from "react"
 
 interface TreeProps {
-    tree: {
-        id: number;
-        name: string;
-        children: TreeProps[];
-    }
+    tree: any,
     onNodeClick: (nodeId: number) => void;
     onNodeNameChange: (nodeId: number, newName: string) => void;
     onNodeDelete: (nodeId: number) => void;
