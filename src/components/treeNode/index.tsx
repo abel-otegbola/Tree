@@ -13,14 +13,26 @@ interface TreeProps {
 export default function TreeComponentRenderer({ tree , onNodeClick, onNodeNameChange, onNodeDelete }: TreeProps) {
     const [edit, setEdit] = useState(false)
 
+    const numberToString: any = {
+        0: "zero",
+        1: "one",
+        2: "two",
+        3: "three",
+        4: "four",
+        5: "five",
+        6: "six",
+        7: "seven",
+        8: "eight"
+    }
+
     return (
-        <div className="tree">
-            <div className={`category ${tree.id === 1 ? "root" : tree.children.length === 0 ? "no-child" : ""}`}>
+        <div className={`tree ${numberToString[tree.children.length]}`}>
+            <div className={`category ${tree.id === 1 ? "root" : tree.children.length === 0 ? "no-child" : "" }`}>
                 {
                     edit ? 
                     <input defaultValue={tree.name} onChange={(e) => onNodeNameChange(tree.id, e.target.value)} /> 
                     :
-                    <p className={`${tree.id === 1 ? "zero" : tree.id === 2 ? "one" : tree.id === 3 ? "two" : ""}`}>{tree.name}</p>
+                    <p className={numberToString[tree.id]}>{tree.name}</p>
                 }
 
                 <span>
@@ -32,14 +44,9 @@ export default function TreeComponentRenderer({ tree , onNodeClick, onNodeNameCh
                         edit ? <FaCheck /> : <FaPen/>
                     }
                 </span>
-
-                {
-                    tree.id === 1 ? ""
-                    :
-                    <span className="times">
-                        <FaTimes onClick={() => onNodeDelete(tree.id)}/>
-                    </span>
-                }
+                <span className="times">
+                    <FaTimes onClick={() => onNodeDelete(tree.id !== 1 ? tree.id : 0)}/>
+                </span>
                 
             </div>
             {tree.children.length > 0 && (

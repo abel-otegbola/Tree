@@ -8,6 +8,7 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #111423;
 }
 
 .topbar {
@@ -15,17 +16,68 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    margin-inline: 5%;
+    font-size: 14px;
     border-bottom: 1px solid #ccc;
+
+    h2 {
+        font-weight: 400;
+
+        span {
+            font-size: 14px;
+            padding: 3px 8px;
+            color: #fff;
+            border-radius: 7px;
+            background-color: rgb(249, 150, 88);
+        }
+    }
 
     .buttons {
         display: flex;
+        position: relative;
 
-        button, p {
+        p {
             padding: 15px 20px;
             border-radius: 2px;
             background-color: #fff;
             border: 1px solid #cccccc66;
             cursor: pointer;
+            position: relative;
+
+            ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                box-shadow: 2px 4px 10px #9999994f;
+                background-color: #fff;
+                color: #999999;
+                border-radius: 5px;
+                padding: 0;
+                margin: 0;
+                height: 0;
+                overflow: hidden;
+
+                &.open {
+                    height: auto;
+                }
+
+                li {
+                    list-style-type: none;
+                    padding: 5px 20px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    &:hover {
+                        background-color: #e7e7e7;
+                        color: #000;
+                        font-weight: 700;
+                    }
+                    &.active {
+                        color: #6a8ac7;
+                    }
+                }
+            }
         }
     }
 }
@@ -33,6 +85,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 5%;
 }
 .tree {
     display: flex;
@@ -44,6 +97,19 @@
     width: 200px;
     position: relative;
 
+    &.two {
+        width: 500px;
+    }
+    &.three {
+        width: 1000px;
+    }
+    &.four {
+        width: 1200px;
+    }
+    &.five {
+        width: 1600px;
+    }
+
     .child {
         display: flex;
         justify-content: center;
@@ -51,19 +117,26 @@
 
         .category p {
             color: #fff;
-            background-color: rgb(249, 150, 88);
+            background-color: rgba(215, 125, 68, 0.613);
         }
         .tree {
             .child {
                 .category p {
-                    background-color: rgb(88, 214, 249);
+                    background-color: rgba(56, 156, 183, 0.583);
                 }
                 .tree {
                     .child {
                         .category p {
-                            background-color: rgb(69, 212, 107);
+                            background-color: rgba(55, 188, 90, 0.573);
                         }
-                        
+                        .tree {
+                            .child {
+                                .category p {
+                                    background-color: rgba(188, 55, 177, 0.573);
+                                }
+                                
+                            }
+                        }
                     }
                 }
             }

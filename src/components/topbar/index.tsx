@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { FaCheck } from 'react-icons/fa'
 
 interface topbarProps {
     zoom: number,
@@ -6,13 +7,24 @@ interface topbarProps {
 }
 
 const Topbar = ({ zoom, setZoom }: topbarProps) => {
+    const [open, setOpen] = useState(false)
+
     return (
         <div className="topbar">
-            <h1>Front end Task</h1>
+            <h2>Services <span>0</span></h2>
 
             <div className="buttons">
                 <p onClick={() => setZoom(zoom - 10)}>-</p>
-                <p>{zoom}</p>
+                <p onClick={() => setOpen(!open)}>
+                    {zoom}%
+                    <ul className={open ? "open" : ""}>
+                        {
+                            [25, 30, 40, 50, 60, 70, 80, 90, 100, 125, 150].map(item => (
+                                <li className={zoom === item ? "active" : ""} onClick={() => setZoom(item)}>{item}% {zoom === item ? <FaCheck /> : ""}</li>
+                            ))
+                        }
+                    </ul>
+                </p>
                 <p onClick={() => setZoom(zoom + 10)}>+</p>
             </div>
         </div>

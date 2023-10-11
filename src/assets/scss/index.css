@@ -7,6 +7,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #111423;
 }
 
 .topbar {
@@ -14,23 +15,69 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  margin-inline: 5%;
+  font-size: 14px;
   border-bottom: 1px solid #ccc;
+}
+.topbar h2 {
+  font-weight: 400;
+}
+.topbar h2 span {
+  font-size: 14px;
+  padding: 3px 8px;
+  color: #fff;
+  border-radius: 7px;
+  background-color: rgb(249, 150, 88);
 }
 .topbar .buttons {
   display: flex;
+  position: relative;
 }
-.topbar .buttons button, .topbar .buttons p {
+.topbar .buttons p {
   padding: 15px 20px;
   border-radius: 2px;
   background-color: #fff;
   border: 1px solid rgba(204, 204, 204, 0.4);
   cursor: pointer;
+  position: relative;
+}
+.topbar .buttons p ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  box-shadow: 2px 4px 10px rgba(153, 153, 153, 0.3098039216);
+  background-color: #fff;
+  color: #999999;
+  border-radius: 5px;
+  padding: 0;
+  margin: 0;
+  height: 0;
+  overflow: hidden;
+}
+.topbar .buttons p ul.open {
+  height: auto;
+}
+.topbar .buttons p ul li {
+  list-style-type: none;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.topbar .buttons p ul li:hover {
+  background-color: #e7e7e7;
+  color: #000;
+  font-weight: 700;
+}
+.topbar .buttons p ul li.active {
+  color: #6a8ac7;
 }
 
 .canvas {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5%;
 }
 
 .tree {
@@ -43,6 +90,18 @@
   width: 200px;
   position: relative;
 }
+.tree.two {
+  width: 500px;
+}
+.tree.three {
+  width: 1000px;
+}
+.tree.four {
+  width: 1200px;
+}
+.tree.five {
+  width: 1600px;
+}
 .tree .child {
   display: flex;
   justify-content: center;
@@ -50,11 +109,14 @@
 }
 .tree .child .category p {
   color: #fff;
-  background-color: rgb(249, 150, 88);
+  background-color: rgba(215, 125, 68, 0.613);
 }
 .tree .child .tree .child .category p {
-  background-color: rgb(88, 214, 249);
+  background-color: rgba(56, 156, 183, 0.583);
 }
 .tree .child .tree .child .tree .child .category p {
-  background-color: rgb(69, 212, 107);
+  background-color: rgba(55, 188, 90, 0.573);
+}
+.tree .child .tree .child .tree .child .tree .child .category p {
+  background-color: rgba(188, 55, 177, 0.573);
 }/*# sourceMappingURL=index.css.map */
