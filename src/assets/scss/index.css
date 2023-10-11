@@ -1,0 +1,60 @@
+:root {
+  background: #e9edee;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.topbar .buttons {
+  display: flex;
+}
+.topbar .buttons button, .topbar .buttons p {
+  padding: 15px 20px;
+  border-radius: 2px;
+  background-color: #fff;
+  border: 1px solid rgba(204, 204, 204, 0.4);
+  cursor: pointer;
+}
+
+.canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+  position: relative;
+}
+.tree .child {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+.tree .child .category p {
+  color: #fff;
+  background-color: rgb(249, 150, 88);
+}
+.tree .child .tree .child .category p {
+  background-color: rgb(88, 214, 249);
+}
+.tree .child .tree .child .tree .child .category p {
+  background-color: rgb(69, 212, 107);
+}/*# sourceMappingURL=index.css.map */

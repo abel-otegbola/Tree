@@ -1,0 +1,73 @@
+:root {
+    background: #e9edee;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+
+    .buttons {
+        display: flex;
+
+        button, p {
+            padding: 15px 20px;
+            border-radius: 2px;
+            background-color: #fff;
+            border: 1px solid #cccccc66;
+            cursor: pointer;
+        }
+    }
+}
+.canvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    position: relative;
+
+    .child {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+
+        .category p {
+            color: #fff;
+            background-color: rgb(249, 150, 88);
+        }
+        .tree {
+            .child {
+                .category p {
+                    background-color: rgb(88, 214, 249);
+                }
+                .tree {
+                    .child {
+                        .category p {
+                            background-color: rgb(69, 212, 107);
+                        }
+                        
+                    }
+                }
+            }
+        }
+        
+    }     
+}
