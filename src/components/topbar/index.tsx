@@ -8,7 +8,6 @@ interface topbarProps {
 
 const Topbar = ({ zoom, setZoom }: topbarProps) => {
     const [open, setOpen] = useState(false)
-    const [theme, setTheme] = useState("light")
 
     const handleTheme = () => {
         document.body.classList.toggle("dark")
