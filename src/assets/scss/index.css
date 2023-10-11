@@ -1,5 +1,4 @@
 :root {
-  background: #e9edee;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -19,6 +18,9 @@ body.dark {
   background-color: #111423;
   color: rgba(255, 255, 255, 0.8039215686);
 }
+body.dark main {
+  background-color: #0b0d1a;
+}
 body.dark .topbar p, body.dark .topbar p ul {
   background-color: #131725;
 }
@@ -30,7 +32,6 @@ body.dark .topbar p, body.dark .topbar p ul {
   padding: 10px;
   margin-inline: 5%;
   font-size: 14px;
-  border-bottom: 1px solid rgba(204, 204, 204, 0.6117647059);
 }
 .topbar h2 {
   font-weight: 400;
@@ -87,9 +88,40 @@ body.dark .topbar p, body.dark .topbar p ul {
   color: #6a8ac7;
 }
 
-.main {
-  overflow: scroll;
-  width: 100%;
+main {
+  overflow-x: auto;
+  width: 90%;
+  height: 70vh;
+  margin-inline: auto;
+  border: 1px solid rgba(0, 0, 0, 0.1607843137);
+  position: relative;
+  background: #e9edee;
+}
+main .direction span {
+  padding: 20px 10px;
+  background-color: rgba(0, 0, 0, 0.1607843137);
+  position: absolute;
+  cursor: pointer;
+}
+main .direction span.top {
+  left: calc(50% - 50px);
+  padding: 10px 40px;
+  top: 0;
+}
+main .direction span.bottom {
+  left: calc(50% - 50px);
+  padding: 10px 40px;
+  bottom: 0;
+}
+main .direction span.left {
+  top: calc(50% - 50px);
+  padding: 40px 10px;
+  left: 0;
+}
+main .direction span.right {
+  top: calc(50% - 50px);
+  padding: 40px 10px;
+  right: 0;
 }
 
 .canvas {
