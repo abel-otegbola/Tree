@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FaCheck, FaMoon, FaSun } from 'react-icons/fa'
+import { FaCheck } from 'react-icons/fa'
 
 interface topbarProps {
     zoom: number,
