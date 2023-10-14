@@ -5,7 +5,7 @@ import Tree from './components/tree'
 import { useState } from "react"
 
 function App() {
-  const [zoom, setZoom] = useState(90)
+  const [zoom, setZoom] = useState(60)
   const [pos, setPos] = useState({ inline: 0, block: 0 })
 
   return (

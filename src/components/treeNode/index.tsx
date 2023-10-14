@@ -32,29 +32,32 @@ export default function TreeComponentRenderer({ tree , onNodeClick, onNodeNameCh
                     edit ? 
                     <input defaultValue={tree.name} onChange={(e) => onNodeNameChange(tree.id, e.target.value)} /> 
                     :
-                    <p className={numberToString[tree.id]}>{tree.name}</p>
+                    <p  onClick={() => setEdit(!edit)} className={numberToString[tree.id]}>{tree.name}</p>
                 }
 
-                <span>
-                    <FaPlus onClick={() => onNodeClick(tree.id)}/>
-                </span>
+                <div className="actions">
+                    <span>
+                        <FaPlus onClick={() => onNodeClick(tree.id)}/>
+                    </span>
 
-                <span onClick={() => setEdit(!edit)} className={edit ? "done" : "edit"}>
-                    {
-                        edit ? <FaCheck /> : <FaPen/>
-                    }
-                </span>
-                <span className="times">
-                    <FaTimes onClick={() => onNodeDelete(tree.id !== 1 ? tree.id : 0)}/>
-                </span>
+                    <span onClick={() => setEdit(!edit)} className={edit ? "done" : "edit"}>
+                        {
+                            edit ? <FaCheck /> : <FaPen/>
+                        }
+                    </span>
+                    <span className="times">
+                        <FaTimes onClick={() => onNodeDelete(tree.id !== 1 ? tree.id : 0)}/>
+                    </span>
+                </div>
                 
             </div>
             {tree.children.length > 0 && (
                 <div className="child">
-                    <div className="line first"></div>
-                    <div className="line second"></div>
                     {tree.children.map((child: any) => (
-                        <TreeComponentRenderer  key={child.id} tree={child} onNodeClick={onNodeClick} onNodeNameChange={onNodeNameChange} onNodeDelete={onNodeDelete}/>
+                        <div key={child.id} className="category--box">
+                            <div className="line"></div>
+                            <TreeComponentRenderer tree={child} onNodeClick={onNodeClick} onNodeNameChange={onNodeNameChange} onNodeDelete={onNodeDelete}/>
+                        </div>
                     ))}
                 </div>
             )}
